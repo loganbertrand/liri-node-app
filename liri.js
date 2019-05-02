@@ -16,25 +16,45 @@ var method = process.argv[2]
 
 var userSearch = process.argv.slice(3)
 
-//concert-this
+//Long If Statement to decide which function to run
 if(method == "concert-this"){
+    searchConcert();
+}
+
+else if(method == "spotify-this-song"){
+    searchSpotify();
+}
+
+else if(method == "movie-this"){
+    searchMovie();
+}
+
+else if(method == "do-what-it-says"){
+    doIt();
+}
+
+
+
+//concert-this
+function searchConcert(){
     //Axios 
     axios.get("https://rest.bandsintown.com/artists/" + userSearch + "/events?app_id=codingbootcamp").then(
-    function(response) {
-        console.log(response);
-    }
-    );
+        function(response) {
+            console.log(response);
+        }
+        );
+
 }
+
 //spotify-this-song
-else if(method == "spotify-this-song"){
+function searchSpotify(){
 
 }
 //movie-this
-else if(method == "movie-this"){
+function searchMovie(){
 
 }
 //do-what-it-says
-else if(method == "do-what-it-says"){
-
+function doIt(){
+    
 }
-

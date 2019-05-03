@@ -3,6 +3,8 @@
 //dotenv required
 require("dotenv").config();
 
+//Moment required for time format
+var moment = require("moment")
 //key.js file
 var keys = require("./keys.js");
 
@@ -40,7 +42,8 @@ function searchConcert(){
     //Axios 
     axios.get("https://rest.bandsintown.com/artists/" + userSearch + "/events?app_id=codingbootcamp").then(
         function(response) {
-            console.log(response);
+            console.log(response.data);
+            //FOR EACH LOOP TO LIST IT ALL
         }
         );
 
